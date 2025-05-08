@@ -1,0 +1,39 @@
+name: PHP SDK Release
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build_and_release:
+    name: Create Production Release and Publish to Packagist
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+      contents: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - name: Install dependencies
+        run: composer install --no-dev --no-interaction --no-progress --optimize-autoloader
+      - name: Create tag from commit
+        uses: christophebedard/tag-version-commit@v1
+        id: tag_version
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          version_regex: '([0-9]+\.[0-9]+\.[0-9]+)'
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.tag }}
+          name: Release ${{ steps.tag_version.outputs.tag }}
+      - name: Publish to Packagist
+        env:
+          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
+        run: |
+          composer config --global http-basic.repo.packagist.com $PACKAGIST_TOKEN
+          composer publish
+
