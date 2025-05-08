@@ -33,5 +33,5 @@ jobs:
       - name: Publish to Packagist
         run: |
           composer config --global --auth http-basic.packagist.org composer ${{ secrets.PACKAGIST_TOKEN }}
-          composer publish
+          composer publish .
 
