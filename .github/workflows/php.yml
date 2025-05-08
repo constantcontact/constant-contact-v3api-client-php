@@ -31,9 +31,7 @@ jobs:
           tag: ${{ steps.tag_version.outputs.tag }}
           name: Release ${{ steps.tag_version.outputs.tag }}
       - name: Publish to Packagist
-        env:
-          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
         run: |
-          composer config --global auth.packagist.org ${{ secrets.PACKAGIST_TOKEN }}: # Set token
+          composer config --global --auth http-basic.packagist.org composer ${{ secrets.PACKAGIST_TOKEN }}
           composer publish
 
