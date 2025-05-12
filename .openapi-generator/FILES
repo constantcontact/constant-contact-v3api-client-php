@@ -7,6 +7,7 @@ LICENSE
 README.md
 README.md
 composer.json
+composer.json
 docs/Api/AccountServicesApi.md
 docs/Api/BulkActivitiesApi.md
 docs/Api/ContactListsApi.md

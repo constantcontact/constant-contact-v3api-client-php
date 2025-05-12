@@ -2,6 +2,8 @@ name: PHP SDK Release
 on:
   push:
     branches: [ main ]
+    tags:
+      - 'v*'  # Trigger on version tags
 
 jobs:
   build_and_release:
@@ -30,9 +32,13 @@ jobs:
         with:
           tag: ${{ steps.tag_version.outputs.tag }}
           name: Release ${{ steps.tag_version.outputs.tag }}
-      - name: Publish to Packagist
-        uses: wscourge/gha-packagist-publish@v1.0
-        with:
-          username: "ctct-publicapi"
-          api_token: ${{ secrets.PACKAGIST_TOKEN }}
+      - name: Validate composer.json
+        run: composer validate --strict
+
+      - name: Echo Packagist Information
+        run: |
+          echo "New tag detected: $"
+          echo "Packagist will automatically pick up this new version."
+          echo "Ensure your Packagist package is linked to this GitHub repository."
+          echo "For faster updates, configure a GitHub webhook in your Packagist package settings."
 

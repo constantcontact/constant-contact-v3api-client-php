@@ -1,14 +1,13 @@
 {
-    "name": "constantcontact/constant-contact-v3api-client-php",
-    "version": "1.6.0",
-    "description": "Swagger build version 3.0.62",
+    "name": "constantcontactpublicapi/constant-contact-v3api-client-php",
+    "description": "Constant Contact API PHP SDK",
     "keywords": [
         "openapitools",
         "openapi-generator",
         "openapi",
+        "rest",
         "php",
         "sdk",
-        "rest",
         "api"
     ],
     "homepage": "https://openapi-generator.tech",
