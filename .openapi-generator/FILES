@@ -144,6 +144,8 @@ lib/Model/CreateOrUpdateContact200Response.php
 lib/Model/CreateOrUpdateContactCustomField.php
 lib/Model/CreateOrUpdateContactRequest.php
 lib/Model/CreateOrUpdateContactRequestCustomFieldsInner.php
+lib/Model/CreateOrUpdateContactRequestSmsChannel.php
+lib/Model/CreateOrUpdateContactRequestSmsChannelSmsChannelConsentsInner.php
 lib/Model/CreateOrUpdateContactRequestStreetAddress.php
 lib/Model/CreateResendEmailCampaign201Response.php
 lib/Model/CreateResendEmailCampaignRequest.php
@@ -314,7 +316,6 @@ lib/Model/HeadersObject.php
 lib/Model/HistoryDetails.php
 lib/Model/JmmlSmsChannel.php
 lib/Model/JmmlSmsChannelConsents.php
-lib/Model/JmmlSmsChannelSmsChannelConsentsInner.php
 lib/Model/JsonImportContact.php
 lib/Model/Link.php
 lib/Model/Links.php

@@ -1,6 +1,6 @@
 <?php
 /**
- * GetCustomField200Response
+ * CreateOrUpdateContactRequestSmsChannel
  *
  * PHP version 7.4
  *
@@ -33,16 +33,16 @@ use \ArrayAccess;
 use \ConstantContactApi\Client\ObjectSerializer;
 
 /**
- * GetCustomField200Response Class Doc Comment
+ * CreateOrUpdateContactRequestSmsChannel Class Doc Comment
  *
  * @category Class
- * @description Custom fields allow Constant Contact users to add custom content to a contact that can be used to personalize emails in addition to the standard set of variables available for email personalization.
+ * @description The contact&#39;s SMS details.
  * @package  ConstantContactApi\Client
  * @author   OpenAPI Generator team
  * @link     https://openapi-generator.tech
  * @implements \ArrayAccess<string, mixed>
  */
-class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSerializable
+class CreateOrUpdateContactRequestSmsChannel implements ModelInterface, ArrayAccess, \JsonSerializable
 {
     public const DISCRIMINATOR = null;
 
@@ -51,7 +51,7 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
       *
       * @var string
       */
-    protected static $openAPIModelName = 'getCustomField_200_response';
+    protected static $openAPIModelName = 'createOrUpdateContact_request_sms_channel';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
@@ -59,12 +59,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var string[]
       */
     protected static $openAPITypes = [
-        'custom_field_id' => 'string',
-        'label' => 'string',
-        'name' => 'string',
-        'type' => 'string',
-        'updated_at' => '\DateTime',
-        'created_at' => '\DateTime'
+        'sms_address' => 'string',
+        'dial_code' => 'string',
+        'country_code' => 'string',
+        'sms_channel_consents' => '\ConstantContactApi\Client\Model\CreateOrUpdateContactRequestSmsChannelSmsChannelConsentsInner[]'
     ];
 
     /**
@@ -75,12 +73,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @psalm-var array<string, string|null>
       */
     protected static $openAPIFormats = [
-        'custom_field_id' => 'uuid',
-        'label' => null,
-        'name' => null,
-        'type' => null,
-        'updated_at' => 'date-time',
-        'created_at' => 'date-time'
+        'sms_address' => null,
+        'dial_code' => null,
+        'country_code' => null,
+        'sms_channel_consents' => null
     ];
 
     /**
@@ -89,12 +85,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
       * @var boolean[]
       */
     protected static array $openAPINullables = [
-        'custom_field_id' => false,
-        'label' => false,
-        'name' => false,
-        'type' => false,
-        'updated_at' => false,
-        'created_at' => false
+        'sms_address' => false,
+        'dial_code' => false,
+        'country_code' => false,
+        'sms_channel_consents' => false
     ];
 
     /**
@@ -183,12 +177,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $attributeMap = [
-        'custom_field_id' => 'custom_field_id',
-        'label' => 'label',
-        'name' => 'name',
-        'type' => 'type',
-        'updated_at' => 'updated_at',
-        'created_at' => 'created_at'
+        'sms_address' => 'sms_address',
+        'dial_code' => 'dial_code',
+        'country_code' => 'country_code',
+        'sms_channel_consents' => 'sms_channel_consents'
     ];
 
     /**
@@ -197,12 +189,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $setters = [
-        'custom_field_id' => 'setCustomFieldId',
-        'label' => 'setLabel',
-        'name' => 'setName',
-        'type' => 'setType',
-        'updated_at' => 'setUpdatedAt',
-        'created_at' => 'setCreatedAt'
+        'sms_address' => 'setSmsAddress',
+        'dial_code' => 'setDialCode',
+        'country_code' => 'setCountryCode',
+        'sms_channel_consents' => 'setSmsChannelConsents'
     ];
 
     /**
@@ -211,12 +201,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
      * @var string[]
      */
     protected static $getters = [
-        'custom_field_id' => 'getCustomFieldId',
-        'label' => 'getLabel',
-        'name' => 'getName',
-        'type' => 'getType',
-        'updated_at' => 'getUpdatedAt',
-        'created_at' => 'getCreatedAt'
+        'sms_address' => 'getSmsAddress',
+        'dial_code' => 'getDialCode',
+        'country_code' => 'getCountryCode',
+        'sms_channel_consents' => 'getSmsChannelConsents'
     ];
 
     /**
@@ -276,12 +264,10 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
      */
     public function __construct(array $data = null)
     {
-        $this->setIfExists('custom_field_id', $data ?? [], null);
-        $this->setIfExists('label', $data ?? [], null);
-        $this->setIfExists('name', $data ?? [], null);
-        $this->setIfExists('type', $data ?? [], null);
-        $this->setIfExists('updated_at', $data ?? [], null);
-        $this->setIfExists('created_at', $data ?? [], null);
+        $this->setIfExists('sms_address', $data ?? [], null);
+        $this->setIfExists('dial_code', $data ?? [], null);
+        $this->setIfExists('country_code', $data ?? [], null);
+        $this->setIfExists('sms_channel_consents', $data ?? [], null);
     }
 
     /**
@@ -311,19 +297,17 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
     {
         $invalidProperties = [];
 
-        if ($this->container['label'] === null) {
-            $invalidProperties[] = "'label' can't be null";
+        if ($this->container['sms_address'] === null) {
+            $invalidProperties[] = "'sms_address' can't be null";
         }
-        if ((mb_strlen($this->container['label']) > 50)) {
-            $invalidProperties[] = "invalid value for 'label', the character length must be smaller than or equal to 50.";
+        if ($this->container['dial_code'] === null) {
+            $invalidProperties[] = "'dial_code' can't be null";
         }
-
-        if (!is_null($this->container['name']) && (mb_strlen($this->container['name']) > 50)) {
-            $invalidProperties[] = "invalid value for 'name', the character length must be smaller than or equal to 50.";
+        if ($this->container['country_code'] === null) {
+            $invalidProperties[] = "'country_code' can't be null";
         }
-
-        if ($this->container['type'] === null) {
-            $invalidProperties[] = "'type' can't be null";
+        if ($this->container['sms_channel_consents'] === null) {
+            $invalidProperties[] = "'sms_channel_consents' can't be null";
         }
         return $invalidProperties;
     }
@@ -341,171 +325,109 @@ class GetCustomField200Response implements ModelInterface, ArrayAccess, \JsonSer
 
 
     /**
-     * Gets custom_field_id
-     *
-     * @return string|null
-     */
-    public function getCustomFieldId()
-    {
-        return $this->container['custom_field_id'];
-    }
-
-    /**
-     * Sets custom_field_id
-     *
-     * @param string|null $custom_field_id The custom_field's unique ID
-     *
-     * @return self
-     */
-    public function setCustomFieldId($custom_field_id)
-    {
-        if (is_null($custom_field_id)) {
-            throw new \InvalidArgumentException('non-nullable custom_field_id cannot be null');
-        }
-        $this->container['custom_field_id'] = $custom_field_id;
-
-        return $this;
-    }
-
-    /**
-     * Gets label
+     * Gets sms_address
      *
      * @return string
      */
-    public function getLabel()
+    public function getSmsAddress()
     {
-        return $this->container['label'];
+        return $this->container['sms_address'];
     }
 
     /**
-     * Sets label
+     * Sets sms_address
      *
-     * @param string $label The display name for the custom_field shown in the UI as free-form text
+     * @param string $sms_address The contact's SMS-capable phone number, excluding the country code.
      *
      * @return self
      */
-    public function setLabel($label)
+    public function setSmsAddress($sms_address)
     {
-        if (is_null($label)) {
-            throw new \InvalidArgumentException('non-nullable label cannot be null');
+        if (is_null($sms_address)) {
+            throw new \InvalidArgumentException('non-nullable sms_address cannot be null');
         }
-        if ((mb_strlen($label) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $label when calling GetCustomField200Response., must be smaller than or equal to 50.');
-        }
-
-        $this->container['label'] = $label;
+        $this->container['sms_address'] = $sms_address;
 
         return $this;
     }
 
     /**
-     * Gets name
-     *
-     * @return string|null
-     */
-    public function getName()
-    {
-        return $this->container['name'];
-    }
-
-    /**
-     * Sets name
-     *
-     * @param string|null $name Unique name for the custom_field constructed from the label by replacing blanks with underscores.
-     *
-     * @return self
-     */
-    public function setName($name)
-    {
-        if (is_null($name)) {
-            throw new \InvalidArgumentException('non-nullable name cannot be null');
-        }
-        if ((mb_strlen($name) > 50)) {
-            throw new \InvalidArgumentException('invalid length for $name when calling GetCustomField200Response., must be smaller than or equal to 50.');
-        }
-
-        $this->container['name'] = $name;
-
-        return $this;
-    }
-
-    /**
-     * Gets type
+     * Gets dial_code
      *
      * @return string
      */
-    public function getType()
+    public function getDialCode()
     {
-        return $this->container['type'];
+        return $this->container['dial_code'];
     }
 
     /**
-     * Sets type
+     * Sets dial_code
      *
-     * @param string $type Specifies the type of value the custom_field field accepts: string or date.
+     * @param string $dial_code The dial code the country uses. For example, use <code>1</code> for the United States dial code.
      *
      * @return self
      */
-    public function setType($type)
+    public function setDialCode($dial_code)
     {
-        if (is_null($type)) {
-            throw new \InvalidArgumentException('non-nullable type cannot be null');
+        if (is_null($dial_code)) {
+            throw new \InvalidArgumentException('non-nullable dial_code cannot be null');
         }
-        $this->container['type'] = $type;
+        $this->container['dial_code'] = $dial_code;
 
         return $this;
     }
 
     /**
-     * Gets updated_at
+     * Gets country_code
      *
-     * @return \DateTime|null
+     * @return string
      */
-    public function getUpdatedAt()
+    public function getCountryCode()
     {
-        return $this->container['updated_at'];
+        return $this->container['country_code'];
     }
 
     /**
-     * Sets updated_at
+     * Sets country_code
      *
-     * @param \DateTime|null $updated_at System generated date and time that the resource was updated, in ISO-8601 format.
+     * @param string $country_code The two-digit code that identifies the country.
      *
      * @return self
      */
-    public function setUpdatedAt($updated_at)
+    public function setCountryCode($country_code)
     {
-        if (is_null($updated_at)) {
-            throw new \InvalidArgumentException('non-nullable updated_at cannot be null');
+        if (is_null($country_code)) {
+            throw new \InvalidArgumentException('non-nullable country_code cannot be null');
         }
-        $this->container['updated_at'] = $updated_at;
+        $this->container['country_code'] = $country_code;
 
         return $this;
     }
 
     /**
-     * Gets created_at
+     * Gets sms_channel_consents
      *
-     * @return \DateTime|null
+     * @return \ConstantContactApi\Client\Model\CreateOrUpdateContactRequestSmsChannelSmsChannelConsentsInner[]
      */
-    public function getCreatedAt()
+    public function getSmsChannelConsents()
     {
-        return $this->container['created_at'];
+        return $this->container['sms_channel_consents'];
     }
 
     /**
-     * Sets created_at
+     * Sets sms_channel_consents
      *
-     * @param \DateTime|null $created_at Date and time that the resource was created, in ISO-8601 format. System generated.
+     * @param \ConstantContactApi\Client\Model\CreateOrUpdateContactRequestSmsChannelSmsChannelConsentsInner[] $sms_channel_consents The consents provided for the SMS Channel.
      *
      * @return self
      */
-    public function setCreatedAt($created_at)
+    public function setSmsChannelConsents($sms_channel_consents)
     {
-        if (is_null($created_at)) {
-            throw new \InvalidArgumentException('non-nullable created_at cannot be null');
+        if (is_null($sms_channel_consents)) {
+            throw new \InvalidArgumentException('non-nullable sms_channel_consents cannot be null');
         }
-        $this->container['created_at'] = $created_at;
+        $this->container['sms_channel_consents'] = $sms_channel_consents;
 
         return $this;
     }

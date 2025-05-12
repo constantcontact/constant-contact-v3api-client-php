@@ -31,7 +31,8 @@ jobs:
           tag: ${{ steps.tag_version.outputs.tag }}
           name: Release ${{ steps.tag_version.outputs.tag }}
       - name: Publish to Packagist
-        run: |
-          composer config --global --auth http-basic.packagist.org composer ${{ secrets.PACKAGIST_TOKEN }}
-          composer publish .
+        uses: wscourge/gha-packagist-publish@v1.0
+        with:
+          username: "ctct-publicapi"
+          api_token: ${{ secrets.PACKAGIST_TOKEN }}
 
