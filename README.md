@@ -1,6 +1,6 @@
 # constant-contact-api
 
-    Swagger build version 3.0.65
+    Swagger build version 3.0.161
 
 
 ## Installation & Usage
@@ -110,7 +110,7 @@ Class | Method | HTTP request | Description
 *ContactsCustomFieldsApi* | [**deleteCustomField**](docs/Api/ContactsCustomFieldsApi.md#deletecustomfield) | **DELETE** /contact_custom_fields/{custom_field_id} | DELETE a custom_field
 *ContactsCustomFieldsApi* | [**getAllCustomFields**](docs/Api/ContactsCustomFieldsApi.md#getallcustomfields) | **GET** /contact_custom_fields | GET custom_fields Collection
 *ContactsCustomFieldsApi* | [**getCustomField**](docs/Api/ContactsCustomFieldsApi.md#getcustomfield) | **GET** /contact_custom_fields/{custom_field_id} | GET a custom_field
-*ContactsCustomFieldsApi* | [**updateCustomField**](docs/Api/ContactsCustomFieldsApi.md#updatecustomfield) | **PUT** /contact_custom_fields/{custom_field_id} | PUT (update) a custom_field
+*ContactsCustomFieldsApi* | [**updateCustomField**](docs/Api/ContactsCustomFieldsApi.md#updatecustomfield) | **PUT** /contact_custom_fields/{custom_field_id} | Update a custom field.
 *ContactsReportingApi* | [**getContactOpenClickRateReport**](docs/Api/ContactsReportingApi.md#getcontactopenclickratereport) | **GET** /reports/contact_reports/{contact_id}/open_and_click_rates | GET Average Open and Click Rates
 *ContactsReportingApi* | [**getContactTrackingCountReport**](docs/Api/ContactsReportingApi.md#getcontacttrackingcountreport) | **GET** /reports/contact_reports/{contact_id}/activity_summary | GET Contact Action Summary
 *ContactsReportingApi* | [**getContactTrackingReport**](docs/Api/ContactsReportingApi.md#getcontacttrackingreport) | **GET** /reports/contact_reports/{contact_id}/activity_details | GET Contact Activity Details
@@ -146,6 +146,17 @@ Class | Method | HTTP request | Description
 *EmailSchedulingApi* | [**scheduleEmailCampaignActivity**](docs/Api/EmailSchedulingApi.md#scheduleemailcampaignactivity) | **POST** /emails/activities/{campaign_activity_id}/schedules | POST (Create) an Email Campaign Activity Schedule
 *EmailSchedulingApi* | [**testSendEmailCampaignActivity**](docs/Api/EmailSchedulingApi.md#testsendemailcampaignactivity) | **POST** /emails/activities/{campaign_activity_id}/tests | POST Test Send an Email Campaign Activity
 *EmailSchedulingApi* | [**unscheduleEmailCampaignActivity**](docs/Api/EmailSchedulingApi.md#unscheduleemailcampaignactivity) | **DELETE** /emails/activities/{campaign_activity_id}/schedules | DELETE an Email Campaign Activity Schedule
+*EventsApi* | [**checkInTickets**](docs/Api/EventsApi.md#checkintickets) | **POST** /events/{event_id}/check_in/tickets | Check in event tickets.
+*EventsApi* | [**copyEvent**](docs/Api/EventsApi.md#copyevent) | **POST** /events/{event_id}/copy | POST (copy) an existing event.
+*EventsApi* | [**createEvent**](docs/Api/EventsApi.md#createevent) | **POST** /events/default | POST (create) a new event.
+*EventsApi* | [**findEvents**](docs/Api/EventsApi.md#findevents) | **GET** /events | GET a collection of events.
+*EventsApi* | [**findRegistrationsUsingGET**](docs/Api/EventsApi.md#findregistrationsusingget) | **GET** /events/{event_id}/tracks/{track_id}/registrations | Get a list of registrations for an event.
+*EventsApi* | [**getEvent2**](docs/Api/EventsApi.md#getevent2) | **GET** /events/{event_id} | GET details for a single event.
+*EventsApi* | [**getRegistrationInfo**](docs/Api/EventsApi.md#getregistrationinfo) | **GET** /events/{event_id}/tracks/{track_id}/registrations/{registration_id} | Get registration details for an event.
+*EventsApi* | [**undoCheckInTickets**](docs/Api/EventsApi.md#undocheckintickets) | **POST** /events/{event_id}/undo_check_in/tickets | Undo event ticket check-in.
+*EventsApi* | [**updateEvent**](docs/Api/EventsApi.md#updateevent) | **PATCH** /events/{event_id} | PATCH (update) an event.
+*EventsApi* | [**updateRegistrationPaymentStatusUsingPUT**](docs/Api/EventsApi.md#updateregistrationpaymentstatususingput) | **PUT** /events/{event_id}/tracks/{track_id}/registrations/payment_status | Update payment status for event registrations.
+*EventsApi* | [**updateRegistrationStatusUsingPUT**](docs/Api/EventsApi.md#updateregistrationstatususingput) | **PUT** /events/{event_id}/tracks/{track_id}/registrations | Update status for event registrations.
 *LandingPagesReportingApi* | [**getContactAdds**](docs/Api/LandingPagesReportingApi.md#getcontactadds) | **GET** /reports/landing_pages/campaign_details/{campaign_activity_id}/p_unique_contact_adds | GET a Unique Contacts Adds Landing Page Report
 *LandingPagesReportingApi* | [**getContactOpens**](docs/Api/LandingPagesReportingApi.md#getcontactopens) | **GET** /reports/landing_pages/campaign_details/{campaign_activity_id}/p_contact_opens | GET a Contacts Opens Landing Page Report
 *LandingPagesReportingApi* | [**getUniqueContactClicks**](docs/Api/LandingPagesReportingApi.md#getuniquecontactclicks) | **GET** /reports/landing_pages/campaign_details/{campaign_activity_id}/p_unique_contact_clicks | GET a Unique Contacts Clicks Landing Page Report
@@ -159,6 +170,10 @@ Class | Method | HTTP request | Description
 *SegmentsApi* | [**getSegmentById**](docs/Api/SegmentsApi.md#getsegmentbyid) | **GET** /segments/{segment_id} | GET a Segment&#39;s Details
 *SegmentsApi* | [**updateSegment**](docs/Api/SegmentsApi.md#updatesegment) | **PUT** /segments/{segment_id} | PUT (update) a Segment
 *SegmentsApi* | [**updateSegmentName**](docs/Api/SegmentsApi.md#updatesegmentname) | **PATCH** /segments/{segment_id}/name | PATCH (rename) a Segment
+*SocialApi* | [**createSocialPost**](docs/Api/SocialApi.md#createsocialpost) | **POST** /social/posts | POST (create) a social media post
+*SocialApi* | [**getHashtagGroups**](docs/Api/SocialApi.md#gethashtaggroups) | **GET** /social/hashtags/groups | GET hashtag groups
+*SocialApi* | [**getSocialConnections**](docs/Api/SocialApi.md#getsocialconnections) | **GET** /social/connections | GET social network connections
+*SocialApi* | [**getSocialProfiles**](docs/Api/SocialApi.md#getsocialprofiles) | **GET** /social/profiles | GET social media profiles
 
 ## Models
 
@@ -168,6 +183,7 @@ Class | Method | HTTP request | Description
 - [AccountCancellation](docs/Model/AccountCancellation.md)
 - [AccountEmailCreateResponse](docs/Model/AccountEmailCreateResponse.md)
 - [AccountEmailInput](docs/Model/AccountEmailInput.md)
+- [AccountInfoDto](docs/Model/AccountInfoDto.md)
 - [AccountPhysicalAddress](docs/Model/AccountPhysicalAddress.md)
 - [AccountSuspension](docs/Model/AccountSuspension.md)
 - [Activities](docs/Model/Activities.md)
@@ -191,7 +207,20 @@ Class | Method | HTTP request | Description
 - [ActivityTaggingStatus](docs/Model/ActivityTaggingStatus.md)
 - [AddAccountEmailAddress201Response](docs/Model/AddAccountEmailAddress201Response.md)
 - [AddAccountEmailAddressRequest](docs/Model/AddAccountEmailAddressRequest.md)
+- [AddressDto](docs/Model/AddressDto.md)
+- [AddressDto1](docs/Model/AddressDto1.md)
+- [AttributeDto](docs/Model/AttributeDto.md)
+- [AttributeDto1](docs/Model/AttributeDto1.md)
 - [AuthorizationErrorSchema](docs/Model/AuthorizationErrorSchema.md)
+- [AutomationCampaign](docs/Model/AutomationCampaign.md)
+- [AutomationCampaignActiveDefinition](docs/Model/AutomationCampaignActiveDefinition.md)
+- [AutomationCampaignStructuredTagsInner](docs/Model/AutomationCampaignStructuredTagsInner.md)
+- [AutomationFlow](docs/Model/AutomationFlow.md)
+- [AutomationFlowWorkflowDef](docs/Model/AutomationFlowWorkflowDef.md)
+- [AutomationStructuredTag](docs/Model/AutomationStructuredTag.md)
+- [AutomationWorkflowDef](docs/Model/AutomationWorkflowDef.md)
+- [AutomationWorkflowDefinition](docs/Model/AutomationWorkflowDefinition.md)
+- [AutomationWorkflowDefinitionWorkflow](docs/Model/AutomationWorkflowDefinitionWorkflow.md)
 - [BouncesTrackingActivitiesPage](docs/Model/BouncesTrackingActivitiesPage.md)
 - [BouncesTrackingActivity](docs/Model/BouncesTrackingActivity.md)
 - [BulkCampaignSummary](docs/Model/BulkCampaignSummary.md)
@@ -204,14 +233,20 @@ Class | Method | HTTP request | Description
 - [CampaignActivitySummary](docs/Model/CampaignActivitySummary.md)
 - [CampaignStatsQueryResultEmail](docs/Model/CampaignStatsQueryResultEmail.md)
 - [CampaignStatsResultGenericStatsEmailPercentsEmail](docs/Model/CampaignStatsResultGenericStatsEmailPercentsEmail.md)
+- [CheckInTicketsRequest](docs/Model/CheckInTicketsRequest.md)
 - [ClicksTrackingActivitiesPage](docs/Model/ClicksTrackingActivitiesPage.md)
 - [ClicksTrackingActivity](docs/Model/ClicksTrackingActivity.md)
 - [CompanyLogo](docs/Model/CompanyLogo.md)
+- [ConnectionDto](docs/Model/ConnectionDto.md)
+- [ConnectionResponseDto](docs/Model/ConnectionResponseDto.md)
+- [ConnectionStatusDto](docs/Model/ConnectionStatusDto.md)
 - [ContactCampaignActivitiesSummary](docs/Model/ContactCampaignActivitiesSummary.md)
 - [ContactCreateOrUpdateInput](docs/Model/ContactCreateOrUpdateInput.md)
 - [ContactCreateOrUpdateResponse](docs/Model/ContactCreateOrUpdateResponse.md)
 - [ContactCustomField](docs/Model/ContactCustomField.md)
 - [ContactDelete](docs/Model/ContactDelete.md)
+- [ContactDto](docs/Model/ContactDto.md)
+- [ContactDto1](docs/Model/ContactDto1.md)
 - [ContactList](docs/Model/ContactList.md)
 - [ContactListArray](docs/Model/ContactListArray.md)
 - [ContactListPutPost](docs/Model/ContactListPutPost.md)
@@ -230,11 +265,14 @@ Class | Method | HTTP request | Description
 - [ContactsCounts](docs/Model/ContactsCounts.md)
 - [ContactsExport](docs/Model/ContactsExport.md)
 - [ContactsJsonImport](docs/Model/ContactsJsonImport.md)
+- [CopyEventRequest](docs/Model/CopyEventRequest.md)
 - [CreateCSVImportActivity201Response](docs/Model/CreateCSVImportActivity201Response.md)
 - [CreateCSVImportActivity201ResponseLinks](docs/Model/CreateCSVImportActivity201ResponseLinks.md)
 - [CreateCSVImportActivity201ResponseStatus](docs/Model/CreateCSVImportActivity201ResponseStatus.md)
 - [CreateContactRequest](docs/Model/CreateContactRequest.md)
 - [CreateContactRequestEmailAddress](docs/Model/CreateContactRequestEmailAddress.md)
+- [CreateCustomFieldsRequest](docs/Model/CreateCustomFieldsRequest.md)
+- [CreateCustomFieldsRequestChoicesInner](docs/Model/CreateCustomFieldsRequestChoicesInner.md)
 - [CreateDeleteActivity201Response](docs/Model/CreateDeleteActivity201Response.md)
 - [CreateDeleteActivity201ResponseLinks](docs/Model/CreateDeleteActivity201ResponseLinks.md)
 - [CreateDeleteActivity201ResponseLinksSelf](docs/Model/CreateDeleteActivity201ResponseLinksSelf.md)
@@ -245,6 +283,9 @@ Class | Method | HTTP request | Description
 - [CreateEmailCampaignRequest](docs/Model/CreateEmailCampaignRequest.md)
 - [CreateEmailCampaignRequestEmailCampaignActivitiesInner](docs/Model/CreateEmailCampaignRequestEmailCampaignActivitiesInner.md)
 - [CreateEmailCampaignRequestEmailCampaignActivitiesInnerPhysicalAddressInFooter](docs/Model/CreateEmailCampaignRequestEmailCampaignActivitiesInnerPhysicalAddressInFooter.md)
+- [CreateEvent201Response](docs/Model/CreateEvent201Response.md)
+- [CreateEvent201ResponseEventPromotionsInner](docs/Model/CreateEvent201ResponseEventPromotionsInner.md)
+- [CreateEvent201ResponseEventSettings](docs/Model/CreateEvent201ResponseEventSettings.md)
 - [CreateExportActivity201Response](docs/Model/CreateExportActivity201Response.md)
 - [CreateExportActivity201ResponseStatus](docs/Model/CreateExportActivity201ResponseStatus.md)
 - [CreateExportActivityRequest](docs/Model/CreateExportActivityRequest.md)
@@ -275,6 +316,11 @@ Class | Method | HTTP request | Description
 - [CreateResendEmailCampaignRequest](docs/Model/CreateResendEmailCampaignRequest.md)
 - [CreateSegment201Response](docs/Model/CreateSegment201Response.md)
 - [CreateSegmentRequest](docs/Model/CreateSegmentRequest.md)
+- [CreateSocialPost200Response](docs/Model/CreateSocialPost200Response.md)
+- [CreateSocialPostRequest](docs/Model/CreateSocialPostRequest.md)
+- [CreateSocialPostRequestProfilePostsInner](docs/Model/CreateSocialPostRequestProfilePostsInner.md)
+- [CreateSocialPostRequestProfilePostsInnerImagesInner](docs/Model/CreateSocialPostRequestProfilePostsInnerImagesInner.md)
+- [CreateSocialPostRequestProfilePostsInnerProfilesInner](docs/Model/CreateSocialPostRequestProfilePostsInnerProfilesInner.md)
 - [CreateTagDeleteActivityRequest](docs/Model/CreateTagDeleteActivityRequest.md)
 - [CreateTagRemoveActivity201Response](docs/Model/CreateTagRemoveActivity201Response.md)
 - [CreateTagRemoveActivity201ResponseLinks](docs/Model/CreateTagRemoveActivity201ResponseLinks.md)
@@ -286,9 +332,14 @@ Class | Method | HTTP request | Description
 - [CreateTagRemoveActivityRequestSource](docs/Model/CreateTagRemoveActivityRequestSource.md)
 - [CrossReference](docs/Model/CrossReference.md)
 - [CrossReferenceResponse](docs/Model/CrossReferenceResponse.md)
+- [CustomField](docs/Model/CustomField.md)
+- [CustomFieldChoice](docs/Model/CustomFieldChoice.md)
+- [CustomFieldChoicePutRequest](docs/Model/CustomFieldChoicePutRequest.md)
+- [CustomFieldChoiceRequest](docs/Model/CustomFieldChoiceRequest.md)
 - [CustomFieldId100](docs/Model/CustomFieldId100.md)
-- [CustomFieldInput](docs/Model/CustomFieldInput.md)
-- [CustomFieldResource](docs/Model/CustomFieldResource.md)
+- [CustomFieldMetadata](docs/Model/CustomFieldMetadata.md)
+- [CustomFieldPutRequest](docs/Model/CustomFieldPutRequest.md)
+- [CustomFieldRequest](docs/Model/CustomFieldRequest.md)
 - [CustomFields](docs/Model/CustomFields.md)
 - [Customer](docs/Model/Customer.md)
 - [CustomerPut](docs/Model/CustomerPut.md)
@@ -298,6 +349,7 @@ Class | Method | HTTP request | Description
 - [DeleteTag202ResponseLinks](docs/Model/DeleteTag202ResponseLinks.md)
 - [DeleteTag202ResponseLinksSelf](docs/Model/DeleteTag202ResponseLinksSelf.md)
 - [DeleteTag202ResponseStatus](docs/Model/DeleteTag202ResponseStatus.md)
+- [DetailedRegistrationDto](docs/Model/DetailedRegistrationDto.md)
 - [DeviceFlowResponse](docs/Model/DeviceFlowResponse.md)
 - [DidNotOpensTrackingActivitiesPage](docs/Model/DidNotOpensTrackingActivitiesPage.md)
 - [DidNotOpensTrackingActivity](docs/Model/DidNotOpensTrackingActivity.md)
@@ -305,6 +357,9 @@ Class | Method | HTTP request | Description
 - [EmailAddressPost](docs/Model/EmailAddressPost.md)
 - [EmailAddressPut](docs/Model/EmailAddressPut.md)
 - [EmailCampaign](docs/Model/EmailCampaign.md)
+- [EmailCampaignAccountInformation](docs/Model/EmailCampaignAccountInformation.md)
+- [EmailCampaignAccountInformationMessageSettings](docs/Model/EmailCampaignAccountInformationMessageSettings.md)
+- [EmailCampaignAccountInformationPhysicalAddress](docs/Model/EmailCampaignAccountInformationPhysicalAddress.md)
 - [EmailCampaignActivity](docs/Model/EmailCampaignActivity.md)
 - [EmailCampaignActivityInput](docs/Model/EmailCampaignActivityInput.md)
 - [EmailCampaignActivityPreview](docs/Model/EmailCampaignActivityPreview.md)
@@ -318,8 +373,25 @@ Class | Method | HTTP request | Description
 - [EmailTestSendInput](docs/Model/EmailTestSendInput.md)
 - [EmailsLink](docs/Model/EmailsLink.md)
 - [EmailsPagingLinks](docs/Model/EmailsPagingLinks.md)
+- [EventCopyRequestDto](docs/Model/EventCopyRequestDto.md)
+- [EventDto](docs/Model/EventDto.md)
+- [EventListingDto](docs/Model/EventListingDto.md)
+- [EventMediaAssetDto](docs/Model/EventMediaAssetDto.md)
+- [EventMediaAssetDto1](docs/Model/EventMediaAssetDto1.md)
+- [EventMetaDataDto](docs/Model/EventMetaDataDto.md)
+- [EventMetaDataDto1](docs/Model/EventMetaDataDto1.md)
+- [EventPromotionDto](docs/Model/EventPromotionDto.md)
+- [EventRegistrationSummaryMetricDto](docs/Model/EventRegistrationSummaryMetricDto.md)
+- [EventSettingsDto](docs/Model/EventSettingsDto.md)
 - [FileObject](docs/Model/FileObject.md)
 - [FileStatusArrayInner](docs/Model/FileStatusArrayInner.md)
+- [FindEvents200Response](docs/Model/FindEvents200Response.md)
+- [FindEvents200ResponseLinks](docs/Model/FindEvents200ResponseLinks.md)
+- [FindEvents200ResponseRecordsInner](docs/Model/FindEvents200ResponseRecordsInner.md)
+- [FindEvents200ResponseRecordsInnerEventRegistrationSummaryMetrics](docs/Model/FindEvents200ResponseRecordsInnerEventRegistrationSummaryMetrics.md)
+- [FindRegistrationsUsingGET200Response](docs/Model/FindRegistrationsUsingGET200Response.md)
+- [FindRegistrationsUsingGET200ResponseLinks](docs/Model/FindRegistrationsUsingGET200ResponseLinks.md)
+- [FindRegistrationsUsingGET200ResponseRecordsInner](docs/Model/FindRegistrationsUsingGET200ResponseRecordsInner.md)
 - [ForwardsTrackingActivitiesPage](docs/Model/ForwardsTrackingActivitiesPage.md)
 - [ForwardsTrackingActivity](docs/Model/ForwardsTrackingActivity.md)
 - [GetABTestEmailCampaign200Response](docs/Model/GetABTestEmailCampaign200Response.md)
@@ -386,6 +458,8 @@ Class | Method | HTTP request | Description
 - [GetContactTrackingReport200ResponseLinksNext](docs/Model/GetContactTrackingReport200ResponseLinksNext.md)
 - [GetContactTrackingReport200ResponseTrackingActivitiesInner](docs/Model/GetContactTrackingReport200ResponseTrackingActivitiesInner.md)
 - [GetCustomField200Response](docs/Model/GetCustomField200Response.md)
+- [GetCustomField200ResponseChoicesInner](docs/Model/GetCustomField200ResponseChoicesInner.md)
+- [GetCustomField200ResponseMetadata](docs/Model/GetCustomField200ResponseMetadata.md)
 - [GetDidNotOpensReport200Response](docs/Model/GetDidNotOpensReport200Response.md)
 - [GetDidNotOpensReport200ResponseTrackingActivitiesInner](docs/Model/GetDidNotOpensReport200ResponseTrackingActivitiesInner.md)
 - [GetEmailCampaignActivity200Response](docs/Model/GetEmailCampaignActivity200Response.md)
@@ -415,14 +489,30 @@ Class | Method | HTTP request | Description
 - [GetEmailStatsReport200ResponseResultsInnerStats](docs/Model/GetEmailStatsReport200ResponseResultsInnerStats.md)
 - [GetForwardsReport200Response](docs/Model/GetForwardsReport200Response.md)
 - [GetForwardsReport200ResponseTrackingActivitiesInner](docs/Model/GetForwardsReport200ResponseTrackingActivitiesInner.md)
+- [GetHashtagGroups200Response](docs/Model/GetHashtagGroups200Response.md)
+- [GetHashtagGroups200ResponseHashtagGroupsInner](docs/Model/GetHashtagGroups200ResponseHashtagGroupsInner.md)
+- [GetHashtagGroups200ResponseLinks](docs/Model/GetHashtagGroups200ResponseLinks.md)
+- [GetHashtagGroups200ResponseLinksNext](docs/Model/GetHashtagGroups200ResponseLinksNext.md)
+- [GetHashtagGroups200ResponsePage](docs/Model/GetHashtagGroups200ResponsePage.md)
 - [GetList200Response](docs/Model/GetList200Response.md)
 - [GetListIdXrefs200Response](docs/Model/GetListIdXrefs200Response.md)
 - [GetListIdXrefs200ResponseXrefsInner](docs/Model/GetListIdXrefs200ResponseXrefsInner.md)
 - [GetOptoutsReport200Response](docs/Model/GetOptoutsReport200Response.md)
 - [GetOptoutsReport200ResponseTrackingActivitiesInner](docs/Model/GetOptoutsReport200ResponseTrackingActivitiesInner.md)
+- [GetRegistrationInfo200Response](docs/Model/GetRegistrationInfo200Response.md)
+- [GetRegistrationInfo200ResponseContactInner](docs/Model/GetRegistrationInfo200ResponseContactInner.md)
+- [GetRegistrationInfo200ResponseOrderSummary](docs/Model/GetRegistrationInfo200ResponseOrderSummary.md)
+- [GetRegistrationInfo200ResponseOrderSummaryDetailsInner](docs/Model/GetRegistrationInfo200ResponseOrderSummaryDetailsInner.md)
+- [GetRegistrationInfo200ResponseTicketsInner](docs/Model/GetRegistrationInfo200ResponseTicketsInner.md)
 - [GetResendEmailCampaign200ResponseInner](docs/Model/GetResendEmailCampaign200ResponseInner.md)
 - [GetSmsEngagementHistory200ResponseInner](docs/Model/GetSmsEngagementHistory200ResponseInner.md)
 - [GetSmsEngagementHistory200ResponseInnerHistoryDetails](docs/Model/GetSmsEngagementHistory200ResponseInnerHistoryDetails.md)
+- [GetSocialConnections200Response](docs/Model/GetSocialConnections200Response.md)
+- [GetSocialConnections200ResponseConnectionsInner](docs/Model/GetSocialConnections200ResponseConnectionsInner.md)
+- [GetSocialConnections200ResponseConnectionsInnerAccountInfo](docs/Model/GetSocialConnections200ResponseConnectionsInnerAccountInfo.md)
+- [GetSocialConnections200ResponseConnectionsInnerConnectionStatus](docs/Model/GetSocialConnections200ResponseConnectionsInnerConnectionStatus.md)
+- [GetSocialProfiles200ResponseInner](docs/Model/GetSocialProfiles200ResponseInner.md)
+- [GetSocialProfiles200ResponseInnerAccountInfo](docs/Model/GetSocialProfiles200ResponseInnerAccountInfo.md)
 - [GetTag200Response](docs/Model/GetTag200Response.md)
 - [GetUniqueContactClicks200Response](docs/Model/GetUniqueContactClicks200Response.md)
 - [GetUniqueContactClicks200ResponseLinks](docs/Model/GetUniqueContactClicks200ResponseLinks.md)
@@ -436,11 +526,19 @@ Class | Method | HTTP request | Description
 - [GetUniqueContactUpdates200Response](docs/Model/GetUniqueContactUpdates200Response.md)
 - [GetUniqueContactUpdates200ResponseTrackingActivitiesInner](docs/Model/GetUniqueContactUpdates200ResponseTrackingActivitiesInner.md)
 - [GetUserPrivileges200ResponseInner](docs/Model/GetUserPrivileges200ResponseInner.md)
+- [HashtagGroupDto](docs/Model/HashtagGroupDto.md)
 - [HeadersObject](docs/Model/HeadersObject.md)
 - [HistoryDetails](docs/Model/HistoryDetails.md)
+- [Href](docs/Model/Href.md)
+- [ImageDto](docs/Model/ImageDto.md)
+- [ItemDto](docs/Model/ItemDto.md)
+- [ItemDto1](docs/Model/ItemDto1.md)
+- [ItemSummaryDto](docs/Model/ItemSummaryDto.md)
+- [ItemSummaryDto1](docs/Model/ItemSummaryDto1.md)
 - [JmmlSmsChannel](docs/Model/JmmlSmsChannel.md)
 - [JmmlSmsChannelConsents](docs/Model/JmmlSmsChannelConsents.md)
 - [JsonImportContact](docs/Model/JsonImportContact.md)
+- [LineItemDetailsDto](docs/Model/LineItemDetailsDto.md)
 - [Link](docs/Model/Link.md)
 - [Links](docs/Model/Links.md)
 - [ListActivityAddContacts](docs/Model/ListActivityAddContacts.md)
@@ -456,10 +554,14 @@ Class | Method | HTTP request | Description
 - [Next](docs/Model/Next.md)
 - [Note](docs/Model/Note.md)
 - [OAuthError](docs/Model/OAuthError.md)
+- [OnlineMeetingDto](docs/Model/OnlineMeetingDto.md)
+- [OnlineMeetingDto1](docs/Model/OnlineMeetingDto1.md)
 - [OpensTrackingActivitiesPage](docs/Model/OpensTrackingActivitiesPage.md)
 - [OpensTrackingActivity](docs/Model/OpensTrackingActivity.md)
 - [OptoutsTrackingActivitiesPage](docs/Model/OptoutsTrackingActivitiesPage.md)
 - [OptoutsTrackingActivity](docs/Model/OptoutsTrackingActivity.md)
+- [OrderDetailsDto](docs/Model/OrderDetailsDto.md)
+- [OrderTicketKeysRequestDto](docs/Model/OrderTicketKeysRequestDto.md)
 - [PContactAddTrackingActivitiesPage](docs/Model/PContactAddTrackingActivitiesPage.md)
 - [PContactAddTrackingActivity](docs/Model/PContactAddTrackingActivity.md)
 - [PContactClickTrackingActivitiesPage](docs/Model/PContactClickTrackingActivitiesPage.md)
@@ -470,7 +572,13 @@ Class | Method | HTTP request | Description
 - [PContactSMSOptInTrackingActivity](docs/Model/PContactSMSOptInTrackingActivity.md)
 - [PContactUpdateTrackingActivitiesPage](docs/Model/PContactUpdateTrackingActivitiesPage.md)
 - [PContactUpdateTrackingActivity](docs/Model/PContactUpdateTrackingActivity.md)
+- [PageMetadataDto](docs/Model/PageMetadataDto.md)
 - [PagedEmailCampaignResponse](docs/Model/PagedEmailCampaignResponse.md)
+- [PagedHashtagGroupsDto](docs/Model/PagedHashtagGroupsDto.md)
+- [PagedResponseLinkRelDto](docs/Model/PagedResponseLinkRelDto.md)
+- [PagedResponseLinksDto](docs/Model/PagedResponseLinksDto.md)
+- [PaginatedRegistrations](docs/Model/PaginatedRegistrations.md)
+- [PaginationDtoEventListingDto](docs/Model/PaginationDtoEventListingDto.md)
 - [PaginationLinks](docs/Model/PaginationLinks.md)
 - [PaginationLinksNext](docs/Model/PaginationLinksNext.md)
 - [PagingLinks](docs/Model/PagingLinks.md)
@@ -481,22 +589,36 @@ Class | Method | HTTP request | Description
 - [PartnerAccountOperationsRequestAccountOperationPathParametersInner](docs/Model/PartnerAccountOperationsRequestAccountOperationPathParametersInner.md)
 - [PartnerAccountOperationsRequestAccountOperationQueryParametersInner](docs/Model/PartnerAccountOperationsRequestAccountOperationQueryParametersInner.md)
 - [PartnerAccountSiteOwnerListInner](docs/Model/PartnerAccountSiteOwnerListInner.md)
+- [PartnerUnsubscribeResponse](docs/Model/PartnerUnsubscribeResponse.md)
 - [PartnersLink](docs/Model/PartnersLink.md)
 - [PatchEmailCampaignNameRequest](docs/Model/PatchEmailCampaignNameRequest.md)
 - [PathParamObject](docs/Model/PathParamObject.md)
+- [PaymentStatusUpdateRequestDto](docs/Model/PaymentStatusUpdateRequestDto.md)
 - [PercentsEmail](docs/Model/PercentsEmail.md)
 - [PhoneNumber](docs/Model/PhoneNumber.md)
 - [PhoneNumberPut](docs/Model/PhoneNumberPut.md)
 - [PlanInfo](docs/Model/PlanInfo.md)
 - [PlanTiersObject](docs/Model/PlanTiersObject.md)
 - [PlanTiersObjectCurrentTiersInner](docs/Model/PlanTiersObjectCurrentTiersInner.md)
+- [PostCreateDto](docs/Model/PostCreateDto.md)
 - [PostCustomFieldDelete201Response](docs/Model/PostCustomFieldDelete201Response.md)
 - [PostCustomFieldDeleteRequest](docs/Model/PostCustomFieldDeleteRequest.md)
+- [PostDto](docs/Model/PostDto.md)
 - [PostTagRequest](docs/Model/PostTagRequest.md)
+- [ProfileDto](docs/Model/ProfileDto.md)
+- [ProfilePostDto](docs/Model/ProfilePostDto.md)
+- [ProfilePostProfileDto](docs/Model/ProfilePostProfileDto.md)
+- [PromoCodeDto](docs/Model/PromoCodeDto.md)
+- [PromoCodeDto1](docs/Model/PromoCodeDto1.md)
 - [Provision](docs/Model/Provision.md)
 - [ProvisionResponse](docs/Model/ProvisionResponse.md)
 - [PutTagRequest](docs/Model/PutTagRequest.md)
 - [QueryParamObject](docs/Model/QueryParamObject.md)
+- [RegistrantInformationLiteDto](docs/Model/RegistrantInformationLiteDto.md)
+- [RegistrationStatusUpdateRequestDto](docs/Model/RegistrationStatusUpdateRequestDto.md)
+- [RegistrationStatusUpdateResponseDto](docs/Model/RegistrationStatusUpdateResponseDto.md)
+- [RegistrationTicketDto](docs/Model/RegistrationTicketDto.md)
+- [RegistrationsLinks](docs/Model/RegistrationsLinks.md)
 - [ReportingLinks](docs/Model/ReportingLinks.md)
 - [ReportingNext](docs/Model/ReportingNext.md)
 - [ReportingsmsLinks](docs/Model/ReportingsmsLinks.md)
@@ -511,13 +633,17 @@ Class | Method | HTTP request | Description
 - [SegmentMaster](docs/Model/SegmentMaster.md)
 - [SegmentName](docs/Model/SegmentName.md)
 - [SegmentsDTO](docs/Model/SegmentsDTO.md)
+- [SegmentsLinks](docs/Model/SegmentsLinks.md)
 - [SendsTrackingActivitiesPage](docs/Model/SendsTrackingActivitiesPage.md)
 - [SendsTrackingActivity](docs/Model/SendsTrackingActivity.md)
+- [SimpleFieldDto](docs/Model/SimpleFieldDto.md)
 - [SmsCampaignSummariesPage](docs/Model/SmsCampaignSummariesPage.md)
 - [SmsChannelConsentDetails](docs/Model/SmsChannelConsentDetails.md)
 - [StatsEmail](docs/Model/StatsEmail.md)
 - [StatsEmailActivity](docs/Model/StatsEmailActivity.md)
 - [StatsError](docs/Model/StatsError.md)
+- [StatusDisplayLabelDto](docs/Model/StatusDisplayLabelDto.md)
+- [StatusDisplayLabelDto1](docs/Model/StatusDisplayLabelDto1.md)
 - [StreetAddress](docs/Model/StreetAddress.md)
 - [StreetAddressPut](docs/Model/StreetAddressPut.md)
 - [Tag](docs/Model/Tag.md)
@@ -530,7 +656,11 @@ Class | Method | HTTP request | Description
 - [TagsLinks](docs/Model/TagsLinks.md)
 - [TagsPagingLinks](docs/Model/TagsPagingLinks.md)
 - [TestSendEmailCampaignActivityRequest](docs/Model/TestSendEmailCampaignActivityRequest.md)
+- [TicketSummaryDto](docs/Model/TicketSummaryDto.md)
+- [TicketSummaryDto1](docs/Model/TicketSummaryDto1.md)
 - [TierObject](docs/Model/TierObject.md)
+- [TrackDto](docs/Model/TrackDto.md)
+- [TrackDto1](docs/Model/TrackDto1.md)
 - [TrackingActivitySmsChannelDTO](docs/Model/TrackingActivitySmsChannelDTO.md)
 - [UniqueEmailCounts](docs/Model/UniqueEmailCounts.md)
 - [UniqueSmsCounts](docs/Model/UniqueSmsCounts.md)
@@ -542,8 +672,12 @@ Class | Method | HTTP request | Description
 - [UpdateContactRequestSmsChannelSmsChannelConsentsInner](docs/Model/UpdateContactRequestSmsChannelSmsChannelConsentsInner.md)
 - [UpdateContactRequestStreetAddressesInner](docs/Model/UpdateContactRequestStreetAddressesInner.md)
 - [UpdateCustomFieldRequest](docs/Model/UpdateCustomFieldRequest.md)
+- [UpdateCustomFieldRequestChoicesInner](docs/Model/UpdateCustomFieldRequestChoicesInner.md)
 - [UpdateList200Response](docs/Model/UpdateList200Response.md)
 - [UpdateListRequest](docs/Model/UpdateListRequest.md)
+- [UpdateRegistrationPaymentStatusUsingPUTRequest](docs/Model/UpdateRegistrationPaymentStatusUsingPUTRequest.md)
+- [UpdateRegistrationStatusUsingPUT207Response](docs/Model/UpdateRegistrationStatusUsingPUT207Response.md)
+- [UpdateRegistrationStatusUsingPUTRequest](docs/Model/UpdateRegistrationStatusUsingPUTRequest.md)
 - [UpdateSegmentNameRequest](docs/Model/UpdateSegmentNameRequest.md)
 - [WebhooksSubscriptionBody](docs/Model/WebhooksSubscriptionBody.md)
 - [WebhooksSubscriptionCollectionInner](docs/Model/WebhooksSubscriptionCollectionInner.md)
@@ -573,7 +707,7 @@ webservices@constantcontact.com
 
 This PHP package is automatically generated by the [OpenAPI Generator](https://openapi-generator.tech) project:
 
-- API version: `1.0.197`
-    - Package version: `1.9.0`
+- API version: `1.0.222`
+    - Package version: `1.12.0`
 - Generator version: `7.2.0`
 - Build package: `org.openapitools.codegen.languages.PhpClientCodegen`

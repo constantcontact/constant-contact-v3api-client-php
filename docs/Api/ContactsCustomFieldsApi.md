@@ -8,18 +8,18 @@ All URIs are relative to https://api.cc.email/v3, except if the operation define
 | [**deleteCustomField()**](ContactsCustomFieldsApi.md#deleteCustomField) | **DELETE** /contact_custom_fields/{custom_field_id} | DELETE a custom_field |
 | [**getAllCustomFields()**](ContactsCustomFieldsApi.md#getAllCustomFields) | **GET** /contact_custom_fields | GET custom_fields Collection |
 | [**getCustomField()**](ContactsCustomFieldsApi.md#getCustomField) | **GET** /contact_custom_fields/{custom_field_id} | GET a custom_field |
-| [**updateCustomField()**](ContactsCustomFieldsApi.md#updateCustomField) | **PUT** /contact_custom_fields/{custom_field_id} | PUT (update) a custom_field |
+| [**updateCustomField()**](ContactsCustomFieldsApi.md#updateCustomField) | **PUT** /contact_custom_fields/{custom_field_id} | Update a custom field. |
 
 
 ## `createCustomFields()`
 
 ```php
-createCustomFields($update_custom_field_request): \ConstantContactApi\Client\Model\GetCustomField200Response
+createCustomFields($create_custom_fields_request): \ConstantContactApi\Client\Model\GetCustomField200Response
 ```
 
 POST (create) a custom_field
 
-This POST request adds a new `custom_field` to the user's account. A user can configure up to 100 `custom_fields` in their account.
+Custom fields are extra data fields you create to store additional information about your contacts, such as preferences, membership levels, and interests. Use custom fields to organize contacts, send personalized email campaigns, and to identify a targeted audience for a specific campaign. Custom fields types include text, number, date, drop-down lists, radio buttons, and checkboxes. A user can configure up to 100 `custom_fields` in their account.
 
 ### Example
 
@@ -41,10 +41,10 @@ $apiInstance = new ConstantContactApi\Client\Api\ContactsCustomFieldsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$update_custom_field_request = new \ConstantContactApi\Client\Model\UpdateCustomFieldRequest(); // \ConstantContactApi\Client\Model\UpdateCustomFieldRequest | The JSON payload required to create a new `custom_field`
+$create_custom_fields_request = new \ConstantContactApi\Client\Model\CreateCustomFieldsRequest(); // \ConstantContactApi\Client\Model\CreateCustomFieldsRequest | The JSON payload required to create a new custom field.
 
 try {
-    $result = $apiInstance->createCustomFields($update_custom_field_request);
+    $result = $apiInstance->createCustomFields($create_custom_fields_request);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactsCustomFieldsApi->createCustomFields: ', $e->getMessage(), PHP_EOL;
@@ -55,7 +55,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **update_custom_field_request** | [**\ConstantContactApi\Client\Model\UpdateCustomFieldRequest**](../Model/UpdateCustomFieldRequest.md)| The JSON payload required to create a new &#x60;custom_field&#x60; | |
+| **create_custom_fields_request** | [**\ConstantContactApi\Client\Model\CreateCustomFieldsRequest**](../Model/CreateCustomFieldsRequest.md)| The JSON payload required to create a new custom field. | |
 
 ### Return type
 
@@ -82,7 +82,7 @@ deleteCustomField($custom_field_id)
 
 DELETE a custom_field
 
-This DELETE request deletes a custom_field from the user's account
+Delete a custom field from the user's account.
 
 ### Example
 
@@ -104,7 +104,7 @@ $apiInstance = new ConstantContactApi\Client\Api\ContactsCustomFieldsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | Unique ID of the custom_field on which to operate.
+$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | The ID that uniquely identifies the custom field to delete.
 
 try {
     $apiInstance->deleteCustomField($custom_field_id);
@@ -117,7 +117,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_field_id** | **string**| Unique ID of the custom_field on which to operate. | |
+| **custom_field_id** | **string**| The ID that uniquely identifies the custom field to delete. | |
 
 ### Return type
 
@@ -144,7 +144,7 @@ getAllCustomFields($limit): \ConstantContactApi\Client\Model\GetAllCustomFields2
 
 GET custom_fields Collection
 
-This GET request returns all `custom_fields` defined in the user's account. <div class=\"Msg\"><p class=\"note-text\">This method does not currently support filtering results using the custom field update date.</p></div>
+Get all custom fields defined in the user's account. <div class=\"Msg\"><p class=\"note-text\">This method does not currently support filtering results using the custom field update date.</p></div>
 
 ### Example
 
@@ -207,7 +207,7 @@ getCustomField($custom_field_id): \ConstantContactApi\Client\Model\GetCustomFiel
 
 GET a custom_field
 
-This GET call retrieves a `custom_field` resource, specified by `custom_field_id`.
+Get details for a specified custom field.
 
 ### Example
 
@@ -229,7 +229,7 @@ $apiInstance = new ConstantContactApi\Client\Api\ContactsCustomFieldsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | Unique ID of the `custom_field` on which to operate.
+$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | The ID that uniquely identifies the custom field.
 
 try {
     $result = $apiInstance->getCustomField($custom_field_id);
@@ -243,7 +243,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_field_id** | **string**| Unique ID of the &#x60;custom_field&#x60; on which to operate. | |
+| **custom_field_id** | **string**| The ID that uniquely identifies the custom field. | |
 
 ### Return type
 
@@ -268,9 +268,9 @@ try {
 updateCustomField($custom_field_id, $update_custom_field_request): \ConstantContactApi\Client\Model\GetCustomField200Response
 ```
 
-PUT (update) a custom_field
+Update a custom field.
 
-This PUT request updates an existing `custom_field` object.
+Update an existing custom field.
 
 ### Example
 
@@ -292,7 +292,7 @@ $apiInstance = new ConstantContactApi\Client\Api\ContactsCustomFieldsApi(
     new GuzzleHttp\Client(),
     $config
 );
-$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | Unique ID of the `custom_field` on which to operate.
+$custom_field_id = 04fe9a-a579-43c5-bb1a-58ed29bf0a6a; // string | The ID that uniquely identifies the custom field to update.
 $update_custom_field_request = new \ConstantContactApi\Client\Model\UpdateCustomFieldRequest(); // \ConstantContactApi\Client\Model\UpdateCustomFieldRequest | The JSON payload used to update an existing custom field. Any properties omitted in the PUT request are overwritten with a null value.
 
 try {
@@ -307,7 +307,7 @@ try {
 
 | Name | Type | Description  | Notes |
 | ------------- | ------------- | ------------- | ------------- |
-| **custom_field_id** | **string**| Unique ID of the &#x60;custom_field&#x60; on which to operate. | |
+| **custom_field_id** | **string**| The ID that uniquely identifies the custom field to update. | |
 | **update_custom_field_request** | [**\ConstantContactApi\Client\Model\UpdateCustomFieldRequest**](../Model/UpdateCustomFieldRequest.md)| The JSON payload used to update an existing custom field. Any properties omitted in the PUT request are overwritten with a null value. | |
 
 ### Return type

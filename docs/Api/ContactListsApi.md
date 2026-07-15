@@ -141,7 +141,7 @@ try {
 ## `getAllLists()`
 
 ```php
-getAllLists($limit, $include_count, $include_membership_count, $name, $status): \ConstantContactApi\Client\Model\GetAllLists200Response
+getAllLists($limit, $include_count, $include_membership_count, $name, $status, $channel_type, $include_sms_membership_count): \ConstantContactApi\Client\Model\GetAllLists200Response
 ```
 
 GET Lists Collection
@@ -173,9 +173,11 @@ $include_count = true; // bool | Set `include_count` to `true` to return the tot
 $include_membership_count = all; // string | Use to include the total number of contacts per list. Set to  `active`, to count only active (mailable) contacts, or `all` to count all contacts.
 $name = TopTier; // string | Use to get details for a single list by entering the full name of the list.
 $status = all; // string | Use to get lists by status. Accepts comma-separated status values.
+$channel_type = all; // string | Use to return lists by channel type. The default value is `email`.
+$include_sms_membership_count = false; // bool | Set to `true` to return the total number of SMS members in each list. Only applicable when `channel_type` is `sms`. Default is `false`.
 
 try {
-    $result = $apiInstance->getAllLists($limit, $include_count, $include_membership_count, $name, $status);
+    $result = $apiInstance->getAllLists($limit, $include_count, $include_membership_count, $name, $status, $channel_type, $include_sms_membership_count);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling ContactListsApi->getAllLists: ', $e->getMessage(), PHP_EOL;
@@ -191,6 +193,8 @@ try {
 | **include_membership_count** | **string**| Use to include the total number of contacts per list. Set to  &#x60;active&#x60;, to count only active (mailable) contacts, or &#x60;all&#x60; to count all contacts. | [optional] |
 | **name** | **string**| Use to get details for a single list by entering the full name of the list. | [optional] |
 | **status** | **string**| Use to get lists by status. Accepts comma-separated status values. | [optional] |
+| **channel_type** | **string**| Use to return lists by channel type. The default value is &#x60;email&#x60;. | [optional] |
+| **include_sms_membership_count** | **bool**| Set to &#x60;true&#x60; to return the total number of SMS members in each list. Only applicable when &#x60;channel_type&#x60; is &#x60;sms&#x60;. Default is &#x60;false&#x60;. | [optional] |
 
 ### Return type
 
